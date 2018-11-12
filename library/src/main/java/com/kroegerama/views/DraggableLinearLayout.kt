@@ -27,7 +27,7 @@ class DraggableLinearLayout @JvmOverloads constructor(
     }
 
     private val isHorizontal get() = orientation == HORIZONTAL
-    private val scrollPadding get() = if (isHorizontal) width / 5f else height / 5f
+    private val scrollPadding get() = if (isHorizontal) (scrollListener ?: this).width / 5f else (scrollListener ?: this).height / 5f
 
     private var isDraggingOuter = false
     private var scrollTimer: Timer? = null
